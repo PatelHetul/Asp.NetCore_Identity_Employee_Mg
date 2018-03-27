@@ -1,0 +1,71 @@
+﻿@model Employee_Mg_Asp.NetCore.Models.EmployeeMaster
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+
+<div>
+    <h4>EmployeeMaster</h4>
+    <hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Employee_Name)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Employee_Name)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.JoiningDate)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.JoiningDate)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Address)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Address)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Email)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Email)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.MobileNo)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.MobileNo)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.DepartmentMaster)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.DepartmentMaster.Department_Name)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Image)
+		</dt>
+		<dd>
+			@{
+			if (System.IO.File.Exists(ViewBag.path + "/" + ViewBag.image))
+			{
+				<img src="~/Emp_IMg/@ViewBag.image"
+					 asp-append-version="true" width=200 height=100 />
+		}
+			}
+		</dd>
+
+	</dl>
+    
+	<form asp-action="Delete">
+		<input type="hidden" asp-for="Employee_Id" />
+		<input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you Really wany to delete this employee?')" /> |
+		<a asp-action="Index">Back to List</a>
+	</form>
+</div>

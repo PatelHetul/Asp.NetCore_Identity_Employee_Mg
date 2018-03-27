@@ -1,0 +1,12 @@
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\bin\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.deps.json
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\bin\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.runtimeconfig.json
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\bin\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.runtimeconfig.dev.json
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\bin\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.dll
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\bin\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.pdb
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\obj\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.csproj.CoreCompileInputs.cache
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\obj\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.AssemblyInfoInputs.cache
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\obj\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.AssemblyInfo.cs
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\obj\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.dll
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\obj\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.pdb
+C:\Users\hetulpatel\source\Project\Employee_Mg_Asp.NetCore\Employee_Mg_Asp.NetCore\obj\Debug\netcoreapp2.0\Employee_Mg_Asp.NetCore.csprojResolveAssemblyReference.cache

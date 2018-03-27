@@ -1,0 +1,28 @@
+﻿@model Employee_Mg_Asp.NetCore.Models.DepartmentMaster
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DepartmentMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department_Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Department_Name)
+        </dd>
+      
+    </dl>
+    
+	<form asp-action="Delete">
+		<input type="hidden" asp-for="Department_Id" />
+		<input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you Really wany to delete this Department?')" /> |
+		<a asp-action="Index">Back to List</a>
+	</form>
+</div>

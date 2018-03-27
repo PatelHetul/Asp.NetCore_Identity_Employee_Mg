@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Employee_Mg_Asp.NetCore.Models.DepartmentMaster>
+
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+@if (ViewData["Role"].ToString().Equals("AdminUser"))
+{
+	<p>
+		<a asp-action="Create">Create New</a>
+	</p>
+}
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Department_Name)
+			</th>
+			@if (ViewData["Role"].ToString().Equals("AdminUser"))
+			{
+				<th>Action</th>}
+			@if (ViewData["Role"].ToString().Equals("GuestUser"))
+			{
+				<th>Action</th>}
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Department_Name)
+				</td>
+				@if (ViewData["Role"].ToString().Equals("AdminUser"))
+				{
+					<td>
+						<a asp-action="Edit" asp-route-id="@item.Department_Id">Edit</a> |
+						<a asp-action="Details" asp-route-id="@item.Department_Id">Details</a> |
+						<a asp-action="Delete" asp-route-id="@item.Department_Id">Delete</a>
+					</td>}
+				@if (ViewData["Role"].ToString().Equals("GuestUser"))
+				{
+					<td>
+
+						<a asp-action="Details" asp-route-id="@item.Department_Id">Details</a>
+
+					</td>}
+			</tr>
+		}
+	</tbody>
+</table>

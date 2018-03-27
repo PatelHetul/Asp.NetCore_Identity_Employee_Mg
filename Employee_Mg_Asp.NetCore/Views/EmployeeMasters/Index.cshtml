@@ -1,0 +1,141 @@
+﻿@model PaginatedList<Employee_Mg_Asp.NetCore.Models.EmployeeMaster>
+
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<form asp-controller="EmployeeMasters" asp-action="Index" method="get">
+	<p>
+		Search : <input type="text" name="searchText" value="@ViewData["currentFilter"]">
+		<input type="submit" value="Search" />
+	</p>
+</form>
+@if (ViewData["Role"].ToString().Equals("AdminUser"))
+{
+	<p>
+		<a asp-action="Create">Create New</a>
+	</p>
+}
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]"
+				   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+					Employee Name
+				</a>
+			</th>
+			<th>
+				JoiningDate
+			</th>
+			<th>
+				Address
+			</th>
+
+			<th>
+				<a asp-action="Index" asp-route-sortOrder="@ViewData["EmailSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+					Employee Email
+				</a>
+			</th>
+			<th>
+				MobileNo
+			</th>
+			<th>
+				Image
+			</th>
+			<th>
+				Department
+			</th>
+			@if (ViewData["Role"].ToString().Equals("AdminUser"))
+
+			{
+				<th>Action</th>}
+			@if (ViewData["Role"].ToString().Equals("GuestUser"))
+
+			{
+				<th>Action</th>}
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Employee_Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.JoiningDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Address)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Email)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.MobileNo)
+				</td>
+				<td>
+					@{
+						if (System.IO.File.Exists(ViewBag.path + "/" + item.Image))
+						{
+							<img src="~/Emp_IMg/@item.Image" asp-append-version="true" width=200 height=100 />
+						}
+					}
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DepartmentMaster.Department_Name)
+				</td>
+				@if (ViewData["Role"].ToString().Equals("AdminUser"))
+				{
+					<td>
+						<a asp-action="Edit" asp-route-id="@item.Employee_Id">Edit</a> |
+						<a asp-action="Details" asp-route-id="@item.Employee_Id">Details</a> |
+						<a asp-action="Delete" asp-route-id="@item.Employee_Id">Delete</a>
+					</td>}
+				@if (ViewData["Role"].ToString().Equals("GuestUser"))
+				{
+					@if (ViewData["Email"].ToString().Equals(item.Email))
+
+					{
+						<td>
+							<a asp-action="Edit" asp-route-id="@item.Employee_Id">Edit</a> |
+							<a asp-action="Details" asp-route-id="@item.Employee_Id">Details</a> |
+							<a asp-action="Delete" asp-route-id="@item.Employee_Id">Delete</a>
+						</td>}
+					@if (!ViewData["Email"].ToString().Equals(item.Email))
+
+					{
+						<td>
+
+							<a asp-action="Details" asp-route-id="@item.Employee_Id">Details</a>
+						</td>}
+				}
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+@{
+	var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+	var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+	Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+	Next
+</a>
+
